@@ -12,7 +12,7 @@ object ApplicationBuild extends Build {
 
   lazy val test3 = Project(id = "test3", base = file("test3"), settings = project_settings) dependsOn(test2)
 
-  lazy val main = play.Project("main", "SOME_VERSION", path = file("main"), settings = project_settings) dependsOn(test3)
+  lazy val main = Project(id = "main", base = file("main"), settings = project_settings) dependsOn(test3)
 
   lazy val root = Project(id = "root",
     base = file(".")
